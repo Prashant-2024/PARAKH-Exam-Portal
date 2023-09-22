@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/student_signup.css' %}">
+</head>
+<body>
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    </div>
+    {% endfor %}
+    <div class="container">
+        <h1>Create your account</h1>
+        <form action="/signup" method="post">
+            {% csrf_token %}
+            <input type="text" name="username" id="username" placeholder="Username" required>
+            <input type="text" name="fname" id="fname" placeholder="First Name" required>
+            <input type="text" id="lname" name="lname" placeholder="Last Name" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="pass1" name="pass1" placeholder="Password" required>
+            <input type="password" id="pass2" name="pass2" placeholder="Confirm Password" required>
+            <button class="btn" type="submit">Sign Up</button>
+        </form>
+        <p class="spacer">Already have an account? <a href="/signin">Sign In</a></p>
+    </div>
+</body>
+</html>

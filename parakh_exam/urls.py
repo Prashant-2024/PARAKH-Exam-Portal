@@ -19,5 +19,9 @@ from exam import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.LandingPage, name='landingpage')
+    path('', views.Welcome, name='welcome'),
+    path('adminlogin/', views.LoginAdmin, name='admin_login'),
+    path('studentpage/',views.StudentPage, name='student_page'),
+    path('studentpage/studentlogin/', views.StudentLogin, name='student_login'),
+    path('studentpage/studentsignup/', views.StudentSignup, name='student_signup'),
 ]

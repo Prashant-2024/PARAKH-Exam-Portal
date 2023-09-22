@@ -2,14 +2,20 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def LandingPage(request):
-    return render(request, 'landing_page.html')
+def Welcome(request):
+    return render(request, 'welcome.html')
 
 def HomePage(request):
     pass
 
-def SignupPage(request):
-    pass
+def StudentPage(request):
+    return render(request, 'student_page.html')
 
-def LoginPage(request):
-    pass
+def StudentSignup(request):
+    return render(request, 'student_signup.html')
+
+def StudentLogin(request):
+    return render(request, 'student_signin.html')
+
+def LoginAdmin(request):
+    return render(request, 'admin.html')
