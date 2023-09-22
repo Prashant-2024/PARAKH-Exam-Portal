@@ -24,4 +24,7 @@ urlpatterns = [
     path('studentpage/',views.StudentPage, name='student_page'),
     path('studentpage/studentlogin/', views.StudentLogin, name='student_login'),
     path('studentpage/studentsignup/', views.StudentSignup, name='student_signup'),
+    path('studentpage/studentlogin/forgot', views.ForgotDetails, name='forgot_credentials'),
+    path('studentpage/studentlogin/studentboard', views.StudentBoard, name='student_board'),
+    path('adminlogin/adminboard', views.AdminBoard, name='admin_board'),
 ]

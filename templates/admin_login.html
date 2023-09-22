@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Portal - Online Examination</title>
-    <link rel="stylesheet" href="{% static 'css/admin.css'%}">
+    <link rel="stylesheet" href="{% static 'css/admin_login.css'%}">
 </head>
 <body>
     <header>
@@ -17,6 +17,7 @@
         <h2><span class="education-background">Admin Login</span></h2>
         <p>Log in to manage exams, questions, and user data.</p>
         <form action="#" method="post" class="admin-login-form">
+            {% csrf_token %}
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <br>

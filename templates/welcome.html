@@ -15,8 +15,8 @@
             <h1>Welcome to the Exam Portal</h1>
             <p>Choose your role:</p>
             <div class="options">
-                <a href="admin.html" class="btn admin-btn">Login as Admin</a>
-                <a href="student.html" class="btn student-btn">Login as Student</a>
+                <a href="{% url 'admin_login' %}" class="btn admin-btn">Login as Admin</a>
+                <a href="{% url 'student_page' %}" class="btn student-btn">Login as Student</a>
             </div>
             <p class="quote">"Education is the key to success."</p>
         </div>
