@@ -25,6 +25,12 @@ urlpatterns = [
     path('studentpage/studentlogin/', views.StudentLogin, name='student_login'),
     path('studentpage/studentsignup/', views.StudentSignup, name='student_signup'),
     path('studentpage/studentlogin/forgot', views.ForgotDetails, name='forgot_credentials'),
+    path('logout/', views.StudentLogout, name='student_logout'),
+    path('logout/', views.AdminLogout, name='admin_logout'),
     path('studentboard/', views.StudentBoard, name='student_board'),
+    path('studentboard/performance', views.StudPerformanceAnalysis, name='student_performance_analysis'),
+    path('studentboard/report', views.StudReport, name='student_report'),
+    path('studentboard/account', views.StudAccount, name='student_account'),
+
     path('adminboard/', views.AdminBoard, name='admin_board'),
 ]

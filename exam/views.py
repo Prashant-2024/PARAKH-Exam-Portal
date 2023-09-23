@@ -1,15 +1,12 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 def Welcome(request):
     return render(request, 'welcome.html')
-
-
-
-
 
 def StudentPage(request):
     return render(request, 'student_page.html')
@@ -43,7 +40,8 @@ def StudentLogin(request):
         if user is not None:
             login(request, user)
             return redirect('student_board')
-
+        else:
+            return HttpResponse("Username or Password is incorrect!!!")
     return render(request, 'student_signin.html')
 
 def ForgotDetails(request):
@@ -59,8 +57,27 @@ def LoginAdmin(request):
             return redirect('admin_board')
     return render(request, 'admin_login.html')
 
-def StudentBoard(request):
-    pass
+def StudentLogout(request):
+    logout(request)
+    return redirect('welcome')
 
+def AdminLogout(request):
+    logout(request)
+    return redirect('welcome')
+
+@login_required(login_url='student_login')
+def StudentBoard(request):
+    return render(request, 'student_board.html')
+
+def StudPerformanceAnalysis(request):
+    return render(request, 'student_performance_analysis.html')
+
+def StudReport(request):
+    return render(request, 'student_report.html')
+
+def StudAccount(request):
+    return render(request, 'student_account.html')
+
+@login_required(login_url='admin_login')
 def AdminBoard(request):
     return render(request, 'admin_board.html')
