@@ -1,50 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Available Exams</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        .header {
-            background-color: #007bff;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .exam-card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-            padding: 20px;
-        }
-        .exam-card h2 {
-            color: #333;
-        }
-        .exam-card button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .exam-card button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/student_exam.css' %}">
 </head>
 <body>
     <div class="header">
@@ -54,7 +15,7 @@
         <div class="exam-card">
             <h2>Pre-Assessment Exam</h2>
             <p>This is a practice exam to assess your knowledge.</p>
-            <button onclick="startExam('PreAssessment')"><a href="/pre_assessment">Start Assessment</a></button>
+            <button onclick="startExam('PreAssessment')"><a href="{% url 'exam_pre_assement' %}">Start Assessment</a></button>
         </div>
 
         <div class="exam-card">
