@@ -78,6 +78,27 @@ def StudReport(request):
 def StudAccount(request):
     return render(request, 'student_account.html')
 
+def StudExam(request):
+    return render(request, 'student_exam.html')
+
+def ExamPreAssement(request):
+    return render(request, 'exam_pre_assement.html')
+
 @login_required(login_url='admin_login')
 def AdminBoard(request):
     return render(request, 'admin_board.html')
+
+def AdminStudent(request):
+    return render(request, '#')
+
+def AdminQuestionBank(request):
+    return render(request, '#')
+
+def AdminPerformanceAnalysis(request):
+    return render(request, '#')
+
+def AdminReports(request):
+    return render(request, '#')
+
+def AdminAccount(request):
+    return render(request, '#')
