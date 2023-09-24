@@ -34,6 +34,7 @@ urlpatterns = [
     path('studentboard/report/', views.StudReport, name='student_report'),
     path('studentboard/account/', views.StudAccount, name='student_account'),
     path('studentboard/exam/', views.StudExam, name='student_exam'),
+    path('quiz/<int:cat_id>', views.StudexamMcq, name='studexam_mcq'),
     
     # path('exam/<int:cat_id>', views.StudQuestions, name='stud_questions'),
     path('exam/mcq1/', views.ExamMcq, name='exam_mcq'),

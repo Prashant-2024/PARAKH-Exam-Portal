@@ -16,7 +16,7 @@
         <div class="exam-card">
             <h2>{{category.title}}</h2>
             <p>{{category.detail}}</p>
-            <button onclick="startExam('PreAssessment')"><a href="{% url 'exam_pre_assement' %}">Start Assessment</a></button>
+            <button onclick="startExam('PreAssessment')"><a href="{% url 'studexam_mcq' category.id %}">Start Assessment</a></button>
         </div>
         <!-- <div class="exam-card">
             <h2>Exam 1</h2>
