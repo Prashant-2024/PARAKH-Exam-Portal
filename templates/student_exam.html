@@ -11,21 +11,17 @@
     <div class="header">
         <h1>Available Exams</h1>
     </div>
-    <!-- {% block content %} -->
     <div class="container">
         <div class="exam-card">
             <h2>Pre-Assessment Exam</h2>
             <p>This is a practice exam to assess your knowledge.</p>
             <button onclick="startExam('PreAssessment')"><a href="{% url 'exam_pre_assement' %}">Start Assessment</a></button>
         </div>
-        <!-- {% for category in data %} -->
         <div class="exam-card">
-            <h2>Exam {{category.id}} : {{category.title}}</h2>
+            <h2>Exam 1</h2>
             <p>Description of Exam 1 goes here.</p>
-            <!-- <button onclick="startExam('Exam1')"><a href="{% url 'stud_questions' category.id %}"></a>{{category.title}}</button> -->
-            <button><a href="{% url 'stud_questions' category.id %}"></a>Start Assessment</button>
+            <button onclick="startExam('Exam2')"><a href="{% url 'exam_mcq' %}">Start Assessment</a></button>
         </div>
-        <!-- {% endfor %} -->
         <div class="exam-card">
             <h2>Exam 2</h2>
             <p>Description of Exam 2 goes here.</p>
@@ -38,6 +34,5 @@
             <button onclick="startExam('Exam3')">Start Assessment</button>
         </div>
     </div>
-    <!-- {% endblock %} -->
 </body>
 </html>

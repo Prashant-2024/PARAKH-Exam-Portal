@@ -90,6 +90,9 @@ def StudQuestions(request, cat_id):
 def ExamPreAssement(request):
     return render(request, 'exam_pre_assement.html')
 
+def ExamMcq(request):
+    return render(request, 'exam_mcq.html')
+
 @login_required(login_url='admin_login')
 def AdminBoard(request):
     return render(request, 'admin_board.html')
