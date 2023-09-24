@@ -80,12 +80,14 @@ def StudAccount(request):
     return render(request, 'student_account.html')
 
 def StudExam(request):
-    return render(request, 'student_exam.html')
+    catData=models.QuizCategory.objects.all()
 
-def StudQuestions(request, cat_id):
-    category=models.QuizCategory.objects.get(id=cat_id)
-    questions=models.QuizQuestion.objects.get(category=category)
-    return render(request, 'student_exam.html', {'data':questions})
+    return render(request, 'student_exam.html',{'data':catData})
+
+# def StudQuestions(request, cat_id):
+#     category=models.QuizCategory.objects.get(id=cat_id)
+#     questions=models.QuizQuestion.objects.get(category=category)
+#     return render(request, 'student_exam.html', {'data':questions})
 
 def ExamPreAssement(request):
     return render(request, 'exam_pre_assement.html')
