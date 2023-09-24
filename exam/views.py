@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from . import models
 
 # Create your views here.
 
@@ -79,10 +80,20 @@ def StudAccount(request):
     return render(request, 'student_account.html')
 
 def StudExam(request):
-    return render(request, 'student_exam.html')
+    catData=models.QuizCategory.objects.all()
+    return render(request, 'student_exam.html',{'data':catData})
+
+@login_required
+def StudexamMcq(request, cat_id):
+    category=models.QuizCategory.objects.get(id=cat_id)
+    questions=models.QuizQuestion.objects.filter(category=category).order_by('id').first()
+    return render(request, 'exam_mcq.html', {'question':questions, 'category':category})
 
 def ExamPreAssement(request):
     return render(request, 'exam_pre_assement.html')
+
+def ExamMcq(request):
+    return render(request, 'exam_mcq.html')
 
 @login_required(login_url='admin_login')
 def AdminBoard(request):
