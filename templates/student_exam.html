@@ -11,31 +11,29 @@
     <div class="header">
         <h1>Available Exams</h1>
     </div>
+    {% for category in data %}
     <div class="container">
         <div class="exam-card">
-            <h2>Pre-Assessment Exam</h2>
-            <p>This is a practice exam to assess your knowledge.</p>
-            <button onclick="startExam('PreAssessment')"><a href="{% url 'exam_pre_assement' %}">Start Assessment</a></button>
+            <h2>{{category.title}}</h2>
+            <p>{{category.detail}}</p>
+            <button onclick="startExam('PreAssessment')"><a href="{% url 'studexam_mcq' category.id %}">Start Assessment</a></button>
         </div>
-
-        <div class="exam-card">
+        <!-- <div class="exam-card">
             <h2>Exam 1</h2>
             <p>Description of Exam 1 goes here.</p>
-            <button onclick="startExam('Exam1')">Start Assessment</button>
-        </div>
-
-        <div class="exam-card">
+            <button onclick="startExam('Exam2')"><a href="{% url 'exam_mcq' %}">Start Assessment</a></button>
+        </div> -->
+        <!-- <div class="exam-card">
             <h2>Exam 2</h2>
             <p>Description of Exam 2 goes here.</p>
             <button onclick="startExam('Exam2')">Start Assessment</button>
         </div>
-
         <div class="exam-card">
             <h2>Exam 3</h2>
             <p>Description of Exam 3 goes here.</p>
             <button onclick="startExam('Exam3')">Start Assessment</button>
-        </div>
+        </div> -->
     </div>
-
+    {% endfor %}
 </body>
 </html>

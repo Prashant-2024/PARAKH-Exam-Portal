@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static 
 from exam import views
 
 urlpatterns = [
@@ -32,6 +34,10 @@ urlpatterns = [
     path('studentboard/report/', views.StudReport, name='student_report'),
     path('studentboard/account/', views.StudAccount, name='student_account'),
     path('studentboard/exam/', views.StudExam, name='student_exam'),
+    path('quiz/<int:cat_id>', views.StudexamMcq, name='studexam_mcq'),
+    
+    # path('exam/<int:cat_id>', views.StudQuestions, name='stud_questions'),
+    path('exam/mcq1/', views.ExamMcq, name='exam_mcq'),
     path('preassement/', views.ExamPreAssement, name='exam_pre_assement'),
     path('adminboard/', views.AdminBoard, name='admin_board'),
     path('admin/student/', views.AdminStudent, name='admin_student'),
@@ -40,3 +46,6 @@ urlpatterns = [
     path('admin/reports/', views.AdminReports, name='admin_reports'),
     path('admin/account/', views.AdminAccount, name='admin_account'),
 ]
+
+if settings.DEBUG:
+    urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
